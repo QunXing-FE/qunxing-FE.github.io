@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="文档,群星," />
 
 
 
@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="QX-FE">
 <meta property="og:description" content="[1004] 群星h5站点项目简介这个项目包含所有跟mobile browser,weixin,iOS,Andorid以及一部分PC端有关的web代码.主要有 mobile官网，mobile企业后台（停止维护阶段），iOS &amp;amp; Andorid 内嵌webview，微信红包活动（未上线），pc版移动端运营平台，pc版运营在线聊天工具
 目录结构1234567891011121314151617">
-<meta property="og:updated_time" content="2016-07-08T04:22:28.150Z">
+<meta property="og:updated_time" content="2016-07-08T05:20:38.645Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="群星移动端文档 -- fanpaa">
 <meta name="twitter:description" content="[1004] 群星h5站点项目简介这个项目包含所有跟mobile browser,weixin,iOS,Andorid以及一部分PC端有关的web代码.主要有 mobile官网，mobile企业后台（停止维护阶段），iOS &amp;amp; Andorid 内嵌webview，微信红包活动（未上线），pc版移动端运营平台，pc版运营在线聊天工具
@@ -182,12 +182,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            归档
+            分类
           </a>
         </li>
       
@@ -202,12 +202,32 @@
         </li>
       
         
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
             公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -376,11 +396,40 @@
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作!</br><span style="color:red">❤</span> ☟ ☟ ☟ ☟ <span style="color:red">❤</span></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="群星金融前端团队 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="群星金融前端团队 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/文档/" rel="tag">#文档</a>
+          
+            <a href="/tags/群星/" rel="tag">#群星</a>
+          
+        </div>
       
 
       
@@ -407,6 +456,12 @@
 
 
     <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
       
     </div>
   </div>
@@ -457,7 +512,7 @@
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/head.jpg"
+               src="/images/head.png"
                alt="群星金融前端团队" />
           <p class="site-author-name" itemprop="name">群星金融前端团队</p>
           <p class="site-description motion-element" itemprop="description">两个黄鹂鸣翠柳，一群程序单身狗！</p>
@@ -471,7 +526,21 @@
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -516,6 +585,20 @@
 
         
         
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhaowenjie.github.io" title="一个神奇的网站" target="_blank">一个神奇的网站</a>
+                </li>
+              
+            </ul>
+          </div>
+        
 
       </section>
 
@@ -544,7 +627,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2014 - 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
