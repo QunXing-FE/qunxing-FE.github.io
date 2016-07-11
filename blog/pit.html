@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="总结," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="两个黄鹂鸣翠柳，一群程序单身狗！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://qunxing-fe.github.io/tags/index.html">
+<meta name="description" content="1,bootstrap模态框和select2合用时input无法获取焦点描述：在bootstrap的模态框里使用select2插件,会导致select2里的input输入框没有办法获得焦点,没有办法输入.解决方案：把页面中的  tabindex=”-1”  删掉">
+<meta property="og:type" content="article">
+<meta property="og:title" content="群星开发中爬过的那些坑">
+<meta property="og:url" content="http://qunxing-fe.github.io/blog/pit.html">
 <meta property="og:site_name" content="QX-FE">
-<meta property="og:description" content="两个黄鹂鸣翠柳，一群程序单身狗！">
-<meta property="og:updated_time" content="2016-07-08T05:16:23.318Z">
+<meta property="og:description" content="1,bootstrap模态框和select2合用时input无法获取焦点描述：在bootstrap的模态框里使用select2插件,会导致select2里的input输入框没有办法获得焦点,没有办法输入.解决方案：把页面中的  tabindex=”-1”  删掉">
+<meta property="og:updated_time" content="2016-07-11T06:32:07.371Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="两个黄鹂鸣翠柳，一群程序单身狗！">
+<meta name="twitter:title" content="群星开发中爬过的那些坑">
+<meta name="twitter:description" content="1,bootstrap模态框和select2合用时input无法获取焦点描述：在bootstrap的模态框里使用select2插件,会导致select2里的input输入框没有办法获得焦点,没有办法输入.解决方案：把页面中的  tabindex=”-1”  删掉">
 
 
 
@@ -114,15 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://qunxing-fe.github.io/tags/"/>
+  <link rel="canonical" href="http://qunxing-fe.github.io/blog/pit.html"/>
 
-  <title>
-  
-
-  
-    标签 | QX-FE
-  
-</title>
+  <title> 群星开发中爬过的那些坑 | QX-FE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -143,7 +137,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -253,16 +247,172 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 4 个标签
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                群星开发中爬过的那些坑
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-11T14:29:27+08:00" content="2016-07-11">
+              2016-07-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/总结/" itemprop="url" rel="index">
+                    <span itemprop="name">总结</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/pit.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/pit.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
         </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/工具/" style="font-size: 12px; color: #ccc">工具</a> <a href="/tags/总结/" style="font-size: 12px; color: #ccc">总结</a> <a href="/tags/文档/" style="font-size: 30px; color: #111">文档</a> <a href="/tags/群星/" style="font-size: 21px; color: #6f6f6f">群星</a>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-bootstrap模态框和select2合用时input无法获取焦点"><a href="#1-bootstrap模态框和select2合用时input无法获取焦点" class="headerlink" title="1,bootstrap模态框和select2合用时input无法获取焦点"></a>1,bootstrap模态框和select2合用时input无法获取焦点</h3><p>描述：在bootstrap的模态框里使用select2插件,会导致select2里的input输入框没有办法获得焦点,没有办法输入.<br>解决方案：把页面中的  tabindex=”-1”  删掉</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作!</br><span style="color:red">❤</span> ☟ ☟ ☟ ☟ <span style="color:red">❤</span></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="群星金融前端团队 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="群星金融前端团队 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/总结/" rel="tag">#总结</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/markdown-doc.html" rel="next" title="markdown使用手册">
+                <i class="fa fa-chevron-left"></i> markdown使用手册
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
   </div>
 
 
@@ -271,6 +421,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="blog/pit.html"
+           data-title="群星开发中爬过的那些坑" data-url="http://qunxing-fe.github.io/blog/pit.html">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -290,8 +448,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/head.png"
@@ -384,6 +551,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-bootstrap模态框和select2合用时input无法获取焦点"><span class="nav-number">1.</span> <span class="nav-text">1,bootstrap模态框和select2合用时input无法获取焦点</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -480,6 +658,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
