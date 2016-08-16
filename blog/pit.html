@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://qunxing-fe.github.io/blog/pit.html">
 <meta property="og:site_name" content="QX-FE">
 <meta property="og:description" content="还记得曾经因为一个小小的问题百撕不得其姐吗？最后浪费我们几个小时甚至一下午，更甚一天或者更久的时间，下面我们就总结下在开发中爬过的那些坑吧(说多了都是泪啊)。">
-<meta property="og:updated_time" content="2016-08-11T03:01:43.306Z">
+<meta property="og:updated_time" content="2016-08-16T07:05:00.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="群星开发中爬过的那些坑">
 <meta name="twitter:description" content="还记得曾经因为一个小小的问题百撕不得其姐吗？最后浪费我们几个小时甚至一下午，更甚一天或者更久的时间，下面我们就总结下在开发中爬过的那些坑吧(说多了都是泪啊)。">
@@ -343,9 +343,10 @@
 
       
         <p>还记得曾经因为一个小小的问题百撕不得其姐吗？最后浪费我们几个小时甚至一下午，更甚一天或者更久的时间，下面我们就总结下在开发中爬过的那些坑吧(说多了都是泪啊)。<br><a id="more"></a></p>
-<h3 id="1-bootstrap模态框和select2合用时input无法获取焦点"><a href="#1-bootstrap模态框和select2合用时input无法获取焦点" class="headerlink" title="1: bootstrap模态框和select2合用时input无法获取焦点"></a>1: bootstrap模态框和select2合用时input无法获取焦点</h3><p><strong><em>描述：</em></strong>在bootstrap的模态框里使用select2插件,会导致select2里的input输入框没有办法获得焦点,没有办法输入.<br><strong><em>解决方案：</em></strong>把页面中的  tabindex=”-1”  删掉</p>
-<h3 id="2-启动程序无法启动"><a href="#2-启动程序无法启动" class="headerlink" title="2: 启动程序无法启动"></a>2: 启动程序无法启动</h3><p><strong><em>描述：</em></strong>找到项目的startup程序，右键run as 没有出现java application<br><strong><em>原因分析：</em></strong>项目导入时是从EGit作为git项目导入进来<br><strong><em>解决方案：</em></strong>把项目作为maven项目重新导入解决</p>
-<h3 id="3-点击一个元素后，按空格键会一直触发该元素的绑定事件"><a href="#3-点击一个元素后，按空格键会一直触发该元素的绑定事件" class="headerlink" title="3: 点击一个元素后，按空格键会一直触发该元素的绑定事件"></a>3: 点击一个元素后，按空格键会一直触发该元素的绑定事件</h3><p><strong><em>描述：</em></strong>点击一个元素后，按空格键会一直触发该元素的绑定事件<br><strong><em>原因分析：</em></strong>调查中<br><strong><em>解决方案：</em></strong>点击空格键return出去</p>
+<h3 id="bootstrap模态框和select2合用时input无法获取焦点"><a href="#bootstrap模态框和select2合用时input无法获取焦点" class="headerlink" title="bootstrap模态框和select2合用时input无法获取焦点"></a>bootstrap模态框和select2合用时input无法获取焦点</h3><p><strong><em>描述：</em></strong>在bootstrap的模态框里使用select2插件,会导致select2里的input输入框没有办法获得焦点,没有办法输入.<br><strong><em>解决方案：</em></strong>把页面中的  tabindex=”-1”  删掉</p>
+<h3 id="收银台启动程序无法启动"><a href="#收银台启动程序无法启动" class="headerlink" title="收银台启动程序无法启动"></a>收银台启动程序无法启动</h3><p><strong><em>描述：</em></strong>找到项目的startup程序，右键run as 没有出现java application<br><strong><em>原因分析：</em></strong>项目导入时是从EGit作为git项目导入进来<br><strong><em>解决方案：</em></strong>把项目作为maven项目重新导入解决</p>
+<h3 id="点击一个元素后，按空格键会一直触发该元素的绑定事件"><a href="#点击一个元素后，按空格键会一直触发该元素的绑定事件" class="headerlink" title="点击一个元素后，按空格键会一直触发该元素的绑定事件"></a>点击一个元素后，按空格键会一直触发该元素的绑定事件</h3><p><strong><em>描述：</em></strong>点击一个元素后，按空格键会一直触发该元素的绑定事件<br><strong><em>原因分析：</em></strong>调查中<br><strong><em>解决方案：</em></strong>点击空格键return出去</p>
+<h3 id="1001登录加载静态文件失败"><a href="#1001登录加载静态文件失败" class="headerlink" title="1001登录加载静态文件失败"></a>1001登录加载静态文件失败</h3><p><strong><em>描述：</em></strong>1001登录企业端 handlebars加载的静态资源 200/206<br><strong><em>原因分析：</em></strong>eclipse Text file encoding没有设置为UTF-8<br><strong><em>解决方案：</em></strong>encoding设置为UTF-8</p>
 
       
     </div>
@@ -575,7 +576,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-bootstrap模态框和select2合用时input无法获取焦点"><span class="nav-number">1.</span> <span class="nav-text">1: bootstrap模态框和select2合用时input无法获取焦点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-启动程序无法启动"><span class="nav-number">2.</span> <span class="nav-text">2: 启动程序无法启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-点击一个元素后，按空格键会一直触发该元素的绑定事件"><span class="nav-number">3.</span> <span class="nav-text">3: 点击一个元素后，按空格键会一直触发该元素的绑定事件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#bootstrap模态框和select2合用时input无法获取焦点"><span class="nav-number">1.</span> <span class="nav-text">bootstrap模态框和select2合用时input无法获取焦点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收银台启动程序无法启动"><span class="nav-number">2.</span> <span class="nav-text">收银台启动程序无法启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点击一个元素后，按空格键会一直触发该元素的绑定事件"><span class="nav-number">3.</span> <span class="nav-text">点击一个元素后，按空格键会一直触发该元素的绑定事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1001登录加载静态文件失败"><span class="nav-number">4.</span> <span class="nav-text">1001登录加载静态文件失败</span></a></li></ol></div>
             
           </div>
         </section>
