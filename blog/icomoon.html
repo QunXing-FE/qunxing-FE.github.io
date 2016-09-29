@@ -84,16 +84,23 @@
 
 
 
-<meta name="description" content="账号wenjie.zhao@dcfservice.net密码：*">
+<meta name="description" content="网页中icon的应用是比较频繁的一件事情，但是网页中icon的维护却是比较麻烦的一件事，如果一个页面引用很多图标，网网我们会拼接成雪碧图来减少http请求，但是雪碧图难以维护，本文介绍icomoon的解决方案">
 <meta property="og:type" content="article">
-<meta property="og:title" content="icomoon使用手册">
+<meta property="og:title" content="前端图标解决方案 - icomoon篇">
 <meta property="og:url" content="http://qunxing-fe.github.io/blog/icomoon.html">
 <meta property="og:site_name" content="QX-FE">
-<meta property="og:description" content="账号wenjie.zhao@dcfservice.net密码：*">
-<meta property="og:updated_time" content="2016-09-01T02:01:37.915Z">
+<meta property="og:description" content="网页中icon的应用是比较频繁的一件事情，但是网页中icon的维护却是比较麻烦的一件事，如果一个页面引用很多图标，网网我们会拼接成雪碧图来减少http请求，但是雪碧图难以维护，本文介绍icomoon的解决方案">
+<meta property="og:image" content="http://qunxing-fe.github.io/picture/iconfont.png">
+<meta property="og:image" content="http://qunxing-fe.github.io/picture/json.png">
+<meta property="og:image" content="http://qunxing-fe.github.io/picture/insert.png">
+<meta property="og:image" content="http://qunxing-fe.github.io/picture/concat.png">
+<meta property="og:image" content="http://qunxing-fe.github.io/picture/rename.png">
+<meta property="og:image" content="http://qunxing-fe.github.io/picture/replace.png">
+<meta property="og:updated_time" content="2016-09-29T07:41:55.433Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="icomoon使用手册">
-<meta name="twitter:description" content="账号wenjie.zhao@dcfservice.net密码：*">
+<meta name="twitter:title" content="前端图标解决方案 - icomoon篇">
+<meta name="twitter:description" content="网页中icon的应用是比较频繁的一件事情，但是网页中icon的维护却是比较麻烦的一件事，如果一个页面引用很多图标，网网我们会拼接成雪碧图来减少http请求，但是雪碧图难以维护，本文介绍icomoon的解决方案">
+<meta name="twitter:image" content="http://qunxing-fe.github.io/picture/iconfont.png">
 
 
 
@@ -116,7 +123,7 @@
 
   <link rel="canonical" href="http://qunxing-fe.github.io/blog/icomoon.html"/>
 
-  <title> icomoon使用手册 | QX-FE </title>
+  <title> 前端图标解决方案 - icomoon篇 | QX-FE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -276,7 +283,7 @@
             
             
               
-                icomoon使用手册
+                前端图标解决方案 - icomoon篇
               
             
           </h1>
@@ -288,8 +295,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-01T16:22:48+08:00" content="2016-06-01">
-              2016-06-01
+            <time itemprop="dateCreated" datetime="2016-10-01T16:22:48+08:00" content="2016-10-01">
+              2016-10-01
             </time>
           </span>
 
@@ -354,8 +361,18 @@
       
 
       
-        <a id="more"></a>
-<p>账号wenjie.zhao@dcfservice.net<br>密码：<strong><strong><strong>*</strong></strong></strong></p>
+        <p>网页中icon的应用是比较频繁的一件事情，但是网页中icon的维护却是比较麻烦的一件事，如果一个页面引用很多图标，网网我们会拼接成雪碧图来减少http请求，但是雪碧图难以维护，本文介绍icomoon的解决方案<br><a id="more"></a></p>
+<p>最近项目忙时间紧 使用教程网上很多，这里不介绍 </p>
+<p>下面介绍维护方案</p>
+<h4 id="新增图标，跨团队如何协作"><a href="#新增图标，跨团队如何协作" class="headerlink" title="新增图标，跨团队如何协作"></a>新增图标，跨团队如何协作</h4><h5 id="前端项目存放目录和介绍"><a href="#前端项目存放目录和介绍" class="headerlink" title="前端项目存放目录和介绍"></a>前端项目存放目录和介绍</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">└─ fonts</div><div class="line">    └─ icomoon</div><div class="line">        ├─ demo-files</div><div class="line">        │  ├─ demo.css                       <span class="comment"># demo 需要的css   </span></div><div class="line">        │  └─ demo.js                        <span class="comment"># demo 需要的js</span></div><div class="line">        ├─ fonts                             </div><div class="line">        │  ├─ icomoon.eot                    <span class="comment"># 字体文件  </span></div><div class="line">        │  ├─ icomoon.svg                    <span class="comment"># 字体文件</span></div><div class="line">        │  ├─ icomoon.ttf                    <span class="comment"># 字体文件</span></div><div class="line">        │  └─ icomoon.woff                   <span class="comment"># 字体文件   </span></div><div class="line">        ├─ demo.html                         <span class="comment"># demo 网页  用于查询图标</span></div><div class="line">        ├─ selection.json                    <span class="comment"># 维护文件</span></div><div class="line">        └─ style.css                         <span class="comment"># 引用定义</span></div></pre></td></tr></table></figure>
+<h5 id="图标选择"><a href="#图标选择" class="headerlink" title="图标选择"></a>图标选择</h5><h6 id="图标可让设计师提供svg图标或者在-http-www-iconfont-cn-上搜索一样的图标"><a href="#图标可让设计师提供svg图标或者在-http-www-iconfont-cn-上搜索一样的图标" class="headerlink" title="图标可让设计师提供svg图标或者在 http://www.iconfont.cn 上搜索一样的图标"></a>图标可让设计师提供svg图标或者在 <a href="http://www.iconfont.cn" target="_blank" rel="external">http://www.iconfont.cn</a> 上搜索一样的图标</h6><p><img src="/picture/iconfont.png" alt="Image"></p>
+<h6 id="上传-项目中正在使用的字体库项目文件夹中的selection-json文件-拿到项目中正在使用的图标"><a href="#上传-项目中正在使用的字体库项目文件夹中的selection-json文件-拿到项目中正在使用的图标" class="headerlink" title="上传 项目中正在使用的字体库项目文件夹中的selection.json文件 拿到项目中正在使用的图标"></a>上传 项目中正在使用的字体库项目文件夹中的selection.json文件 拿到项目中正在使用的图标</h6><p><img src="/picture/json.png" alt="Image"></p>
+<h6 id="上传本次要用的图标"><a href="#上传本次要用的图标" class="headerlink" title="上传本次要用的图标"></a>上传本次要用的图标</h6><p><img src="/picture/insert.png" alt="Image"></p>
+<h6 id="合并图标"><a href="#合并图标" class="headerlink" title="合并图标"></a>合并图标</h6><p><img src="/picture/concat.png" alt="Image"></p>
+<h6 id="下载压缩包-命名-icon"><a href="#下载压缩包-命名-icon" class="headerlink" title="下载压缩包 命名 icon"></a>下载压缩包 命名 icon</h6><p><img src="/picture/rename.png" alt="Image"></p>
+<h6 id="替换项目中的文件"><a href="#替换项目中的文件" class="headerlink" title="替换项目中的文件"></a>替换项目中的文件</h6><p><img src="/picture/replace.png" alt="Image"></p>
+<p>Q: 如果在同一个项目周期不同团队都有新的icon上传怎么办？</p>
+<p>A: 大家都用同一个icomoon账户就可以了。</p>
 
       
     </div>
@@ -410,17 +427,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/markdown-doc.html" rel="next" title="markdown使用手册">
-                <i class="fa fa-chevron-left"></i> markdown使用手册
+              <a href="/blog/component-doc.html" rel="next" title="群星一些前端插件和服务API">
+                <i class="fa fa-chevron-left"></i> 群星一些前端插件和服务API
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/m-iqunxing-doc.html" rel="prev" title="群星移动端文档 -- fanpaa">
-                群星移动端文档 -- fanpaa <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -453,7 +466,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="blog/icomoon.html"
-           data-title="icomoon使用手册" data-url="http://qunxing-fe.github.io/blog/icomoon.html">
+           data-title="前端图标解决方案 - icomoon篇" data-url="http://qunxing-fe.github.io/blog/icomoon.html">
       </div>
     
   </div>
@@ -498,7 +511,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -587,7 +600,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#新增图标，跨团队如何协作"><span class="nav-number">1.</span> <span class="nav-text">新增图标，跨团队如何协作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前端项目存放目录和介绍"><span class="nav-number">1.1.</span> <span class="nav-text">前端项目存放目录和介绍</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图标选择"><span class="nav-number">1.2.</span> <span class="nav-text">图标选择</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#图标可让设计师提供svg图标或者在-http-www-iconfont-cn-上搜索一样的图标"><span class="nav-number">1.2.1.</span> <span class="nav-text">图标可让设计师提供svg图标或者在 http://www.iconfont.cn 上搜索一样的图标</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#上传-项目中正在使用的字体库项目文件夹中的selection-json文件-拿到项目中正在使用的图标"><span class="nav-number">1.2.2.</span> <span class="nav-text">上传 项目中正在使用的字体库项目文件夹中的selection.json文件 拿到项目中正在使用的图标</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#上传本次要用的图标"><span class="nav-number">1.2.3.</span> <span class="nav-text">上传本次要用的图标</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#合并图标"><span class="nav-number">1.2.4.</span> <span class="nav-text">合并图标</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#下载压缩包-命名-icon"><span class="nav-number">1.2.5.</span> <span class="nav-text">下载压缩包 命名 icon</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#替换项目中的文件"><span class="nav-number">1.2.6.</span> <span class="nav-text">替换项目中的文件</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
