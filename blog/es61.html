@@ -84,18 +84,16 @@
 
 
 
-<meta name="description" content="Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。">
+<meta name="description" content="let 允许把变量的作用域限制在块级域中, const 这个声明创建一个常量,可以全局或局部的函数声明。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="markdown使用手册">
-<meta property="og:url" content="http://qunxing-fe.github.io/blog/markdown-doc.html">
+<meta property="og:title" content="ES6中let、const和var的区别">
+<meta property="og:url" content="http://qunxing-fe.github.io/blog/es61.html">
 <meta property="og:site_name" content="QX-FE">
-<meta property="og:description" content="Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。">
-<meta property="og:image" content="https://octodex.github.com/images/yaktocat.png">
-<meta property="og:updated_time" content="2016-07-19T03:19:55.939Z">
+<meta property="og:description" content="let 允许把变量的作用域限制在块级域中, const 这个声明创建一个常量,可以全局或局部的函数声明。">
+<meta property="og:updated_time" content="2017-04-24T08:14:44.265Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="markdown使用手册">
-<meta name="twitter:description" content="Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。">
-<meta name="twitter:image" content="https://octodex.github.com/images/yaktocat.png">
+<meta name="twitter:title" content="ES6中let、const和var的区别">
+<meta name="twitter:description" content="let 允许把变量的作用域限制在块级域中, const 这个声明创建一个常量,可以全局或局部的函数声明。">
 
 
 
@@ -116,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://qunxing-fe.github.io/blog/markdown-doc.html"/>
+  <link rel="canonical" href="http://qunxing-fe.github.io/blog/es61.html"/>
 
-  <title> markdown使用手册 | QX-FE </title>
+  <title> ES6中let、const和var的区别 | QX-FE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +276,7 @@
             
             
               
-                markdown使用手册
+                ES6中let、const和var的区别
               
             
           </h1>
@@ -290,8 +288,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-01T16:22:48+08:00" content="2016-06-01">
-              2016-06-01
+            <time itemprop="dateCreated" datetime="2017-05-01T16:22:48+08:00" content="2017-05-01">
+              2017-05-01
             </time>
           </span>
 
@@ -332,8 +330,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/blog/markdown-doc.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/markdown-doc.html" itemprop="commentsCount"></span>
+                <a href="/blog/es61.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/es61.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -356,46 +354,26 @@
       
 
       
-        <p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。<br><a id="more"></a></p>
-<h2 id="一些常用markdown命令"><a href="#一些常用markdown命令" class="headerlink" title="一些常用markdown命令"></a>一些常用markdown命令</h2><h3 id="文本相关"><a href="#文本相关" class="headerlink" title="文本相关:"></a>文本相关:</h3><p>H1 - H6 标题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">H1: # 标题示例 1</div><div class="line">H2: ## 标题示例 2</div><div class="line">H3: ### 标题示例 3</div><div class="line">H4: #### 标题示例 4</div><div class="line">H5: ##### 标题示例 5</div><div class="line">H6: ###### 标题示例 6</div></pre></td></tr></table></figure>
-<h3 id="文本样式相关"><a href="#文本样式相关" class="headerlink" title="文本样式相关:"></a>文本样式相关:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">链接: [Title](URL)</div><div class="line">加粗: **Bold**</div><div class="line">斜体字: *Italics*</div><div class="line">删除线: ~~text~~</div><div class="line">列表: * 添加星号或 - 成为一个新的列表项。</div><div class="line">引用: &gt; 引用内容</div><div class="line">内嵌代码: `alert(&apos;Hello World&apos;);`</div><div class="line">画水平线(HR): --------</div></pre></td></tr></table></figure>
-<h5 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h5><p><a href="http://www.baidu.com" target="_blank" rel="external">链接百度</a> <strong>加粗的文字</strong> <em>斜体的文字</em> <del>带删除线的文字</del></p>
-<ul>
-<li>*号列表1</li>
-<li>*号列表2</li>
-</ul>
-<ul>
-<li>-号列表3</li>
-<li>-号列表4<ul>
-<li>二级*号列表1</li>
-</ul>
-<ul>
-<li>二级*号列表2</li>
-</ul>
-<ul>
-<li>二级-号列表3</li>
-</ul>
-<ul>
-<li>二级-号列表4</li>
-</ul>
-</li>
-</ul>
+        <p>let 允许把变量的作用域限制在块级域中, const 这个声明创建一个常量,可以全局或局部的函数声明。<br><a id="more"></a></p>
 <blockquote>
-<p>这是引用内容</p>
-</blockquote>
-<p><code>alert(&#39;Hello World 内嵌代码&#39;);</code></p>
-<p>下面画水平线(HR)</p>
-<hr>
-<h3 id="图片和代码相关"><a href="#图片和代码相关" class="headerlink" title="图片和代码相关:"></a>图片和代码相关:</h3><p>使用代码<code>![Image](https://octodex.github.com/images/yaktocat.png)</code></p>
-<p>eg:<br><img src="https://octodex.github.com/images/yaktocat.png" alt="Image"></p>
-<p>普通代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">` ` `</div><div class="line">	you code(使用时去除空格)</div><div class="line">` ` `</div></pre></td></tr></table></figure></p>
-<p>eg:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (isAwesome)&#123;</div><div class="line">  return true</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>指定语言类型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">` ` `javascript</div><div class="line">	you code(使用时去除空格)</div><div class="line">` ` `</div></pre></td></tr></table></figure></p>
-<p>eg:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (isAwesome)&#123;</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h5 id="emoji表情"><a href="#emoji表情" class="headerlink" title="emoji表情:"></a>emoji表情:</h5><p><code>:smile:</code> <code>:heart_eyes:</code> <code>:flushed:</code> <code>:stuck_out_tongue_winking_eye:</code> <code>:stuck_out_tongue_winking_eye:</code></p>
-<p>eg：<br>:smile: :heart_eyes: :flushed: :stuck_out_tongue_winking_eye: :stuck_out_tongue_winking_eye:<br>注：有些markdown解析引擎不支持<br> <a href="http://www.emoji-cheat-sheet.com/" target="_blank" rel="external">查看更多emoji表情</a> </p>
-
+<h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3></blockquote>
+<p>let 允许把变量的作用域限制在块级域中。与 var 不同处是：var 申明变量要么是全局的，要么是函数级的，而无法是块级的。<br>let的作用域是块，而var的作用域是函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="number">10</span>;</div><div class="line"><span class="keyword">if</span> (a === <span class="number">5</span>) &#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">4</span>; <span class="comment">// The scope is inside the if-block</span></div><div class="line">  <span class="keyword">var</span> b = <span class="number">1</span>; <span class="comment">// The scope is inside the function</span></div><div class="line">  <span class="built_in">console</span>.log(a);  <span class="comment">// 4</span></div><div class="line">  <span class="built_in">console</span>.log(b);  <span class="comment">// 1</span></div><div class="line">&#125; </div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 5</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<p>let 在循环中</p>
+<p>可以使用let关键字绑定变量在循环的范围而不是使用一个全局变量(使用var)定义。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// 0, 1, 2, 3, 4 ... 9</span></div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(i); <span class="comment">// i is not defined</span></div></pre></td></tr></table></figure>
+<p>上面报错，因为变量i不存在于for语句外的作用域中。let创建块级作用域变量的，使用var创建一个全局变量。</p>
+<blockquote>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3></blockquote>
+<p>const这个声明创建一个常量,可以全局或局部的函数声明。</p>
+<p>一个常量可以是全局的或者是局部的,常量遵循与变量相同的作用域规则。</p>
+<p>一个常量不可以被重新赋值,并且不能被重复声明.所以,虽然可以在声明一个常量的时候不进行初始化,但这样做是没有意义的,因为这个常量的值永远会保持undefined。</p>
+<p>一个常量不能和它所在作用域内的其他变量或函数拥有相同的名称。</p>
+<p>示例</p>
+<p>下面的例子演示了常量的行为。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> num = <span class="number">10</span>;</div><div class="line">num =<span class="number">20</span>;</div><div class="line"><span class="built_in">console</span>.log(num); <span class="comment">// 10</span></div></pre></td></tr></table></figure>
+<p>如果我们在上面声明常量num，在声明var num，这时会报错，num已经声明。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> num = <span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> num = <span class="number">20</span>;</div><div class="line"><span class="built_in">console</span>.log(num); <span class="comment">// 'num' has already been declared</span></div></pre></td></tr></table></figure>
       
     </div>
 
@@ -449,17 +427,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/README.html" rel="next" title="使用手册">
-                <i class="fa fa-chevron-left"></i> 使用手册
+              <a href="/blog/icomoon.html" rel="next" title="前端图标解决方案 - icomoon篇">
+                <i class="fa fa-chevron-left"></i> 前端图标解决方案 - icomoon篇
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/m-iqunxing-doc.html" rel="prev" title="群星移动端文档 -- fanpaa">
-                群星移动端文档 -- fanpaa <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -491,8 +465,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="blog/markdown-doc.html"
-           data-title="markdown使用手册" data-url="http://qunxing-fe.github.io/blog/markdown-doc.html">
+      <div class="ds-thread" data-thread-key="blog/es61.html"
+           data-title="ES6中let、const和var的区别" data-url="http://qunxing-fe.github.io/blog/es61.html">
       </div>
     
   </div>
@@ -626,7 +600,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些常用markdown命令"><span class="nav-number">1.</span> <span class="nav-text">一些常用markdown命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本相关"><span class="nav-number">1.1.</span> <span class="nav-text">文本相关:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本样式相关"><span class="nav-number">1.2.</span> <span class="nav-text">文本样式相关:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#示例"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">示例:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片和代码相关"><span class="nav-number">1.3.</span> <span class="nav-text">图片和代码相关:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#emoji表情"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">emoji表情:</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#let"><span class="nav-number">1.</span> <span class="nav-text">let</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const"><span class="nav-number">2.</span> <span class="nav-text">const</span></a></li></ol></div>
             
           </div>
         </section>
