@@ -1,0 +1,762 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="文档,工具," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="在前端开发过程中，如果后端接口还没有提供，前端拿不到数据一些交互行为的代码可能就没法继续写，这时我们通常自己造一些数据来让页面流程走下去，最近项目切换到vue框架开发，发现json-server能很好的解决接口mock的问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6中核心内容总结">
+<meta property="og:url" content="http://qunxing-fe.github.io/blog/json-server.html">
+<meta property="og:site_name" content="QX-FE">
+<meta property="og:description" content="在前端开发过程中，如果后端接口还没有提供，前端拿不到数据一些交互行为的代码可能就没法继续写，这时我们通常自己造一些数据来让页面流程走下去，最近项目切换到vue框架开发，发现json-server能很好的解决接口mock的问题。">
+<meta property="og:updated_time" content="2017-08-12T09:21:38.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6中核心内容总结">
+<meta name="twitter:description" content="在前端开发过程中，如果后端接口还没有提供，前端拿不到数据一些交互行为的代码可能就没法继续写，这时我们通常自己造一些数据来让页面流程走下去，最近项目切换到vue框架开发，发现json-server能很好的解决接口mock的问题。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://qunxing-fe.github.io/blog/json-server.html"/>
+
+  <title> ES6中核心内容总结 | QX-FE </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?0364dc0898502c469de04fa1d750e778";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">QX-FE</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">群星金融网</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ES6中核心内容总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-01T16:22:48+08:00" content="2017-05-01">
+              2017-05-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/文档/" itemprop="url" rel="index">
+                    <span itemprop="name">文档</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/文档/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/json-server.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/json-server.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在前端开发过程中，如果后端接口还没有提供，前端拿不到数据一些交互行为的代码可能就没法继续写，这时我们通常自己造一些数据来让页面流程走下去，最近项目切换到vue框架开发，发现json-server能很好的解决接口mock的问题。<br><a id="more"></a></p>
+<p><a href="https://github.com/typicode/json-server" target="_blank" rel="external">json-server官方地址</a></p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p><code>$ npm install json-server -g</code> </p>
+<p>启动json-server<br><code>$ json-server --watch db.json</code></p>
+<p>通过官方的例子你可以发现<br><code>json-server</code>其实是在你访问接口时，返回<code>db.json</code>里面的对应的<code>key</code>的值<br>例如：你访问 <code>http://localhost:3000/posts/</code> 返回<code>db.json</code>里面的<code>json.posts</code></p>
+<p>那么问题来了<br>1.如果我们要模拟的接口非常多，要一个一个的往<code>db.json</code>里面添加吗，其他前端人员也会修改到这个文件，每次合并代码都要考虑冲突问题，而且这个文件会变得非常庞大，难以维护<br>2.如果我的接口是<code>http://localhost:3000/a/b</code>，<code>http://localhost:3000/a/b/c</code> 怎么解决</p>
+<p>本文就主要探讨下这两个问题的解决方案：</p>
+<p>1，修改<code>package.json</code>里面的<code>npm run mock</code> 对应的命令为 <code>json-server mock/index.js</code><br>在项目中建立mock文件夹，文件夹下建立<code>index.js</code>（名字随意）文件，<br>index.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    a: <span class="string">'a'</span>,</div><div class="line">    b: <span class="string">'b'</span></div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>此时启动<code>npm run mock</code>，访问<code>http://localhost:3000/a</code>，可以获得想要的结果<br>2，在mock文件夹下新建几个js文件，例如我新建了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">└─ mock</div><div class="line">   │─ <span class="built_in">test</span>                  </div><div class="line">   │  ├─ a.js</div><div class="line">   │  └─ b.js</div><div class="line">   └─ <span class="built_in">test</span>2</div><div class="line">      ├─ c.js</div><div class="line">      └─ d.js</div></pre></td></tr></table></figure></p>
+<p>举例其中一个a.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  url: <span class="string">'a'</span>,</div><div class="line">  title: <span class="string">''</span>,</div><div class="line">  type: <span class="string">'GET'</span>,</div><div class="line">  decs: <span class="string">''</span>,</div><div class="line">  query: &#123;</div><div class="line">    a: <span class="string">'1'</span></div><div class="line">  &#125;,</div><div class="line">  res: &#123;</div><div class="line">    ret: <span class="number">1</span>,</div><div class="line">    result: [</div><div class="line">      &#123;</div><div class="line">        a: <span class="string">'2'</span>,</div><div class="line">        b: <span class="string">'3'</span>,</div><div class="line">        c: <span class="string">'4'</span></div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>修改index.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> Path = <span class="built_in">require</span>(<span class="string">'path'</span>)</div><div class="line"><span class="keyword">let</span> glob = <span class="built_in">require</span>(<span class="string">'glob'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 读取所有API文件</span></div><div class="line"><span class="keyword">const</span> apiFiles = glob.sync(Path.resolve(__dirname, <span class="string">'./'</span>) + <span class="string">'/**/*.js'</span>, &#123;</div><div class="line">  nodir: <span class="literal">true</span></div><div class="line">&#125;)</div><div class="line"><span class="keyword">let</span> data = &#123;&#125;</div><div class="line"><span class="comment">// 输出所有api文件 i从1开始 跳过index.js</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>, l = apiFiles.length; i &lt; l; i++) &#123;</div><div class="line">  <span class="keyword">let</span> api = <span class="built_in">require</span>(apiFiles[i])</div><div class="line">  <span class="keyword">if</span> (api.url) &#123;</div><div class="line">    data[api.url] = api.res</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> data</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后启动mock，你会看到控制台打印<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Resources</div><div class="line">  http://localhost:8083/a</div><div class="line">  http://localhost:8083/b</div><div class="line">  http://localhost:8083/c</div><div class="line">  http://localhost:8083/d</div></pre></td></tr></table></figure></p>
+<p>成功的实现了每个api分离，添加一个api我们只需要复制一个js文件，删除和修改也只是改动我们自己的文件，不会影响到团队其他成员</p>
+<h4 id="第二个问题：如果我的api路径类似-a-b，a-b-c怎么办"><a href="#第二个问题：如果我的api路径类似-a-b，a-b-c怎么办" class="headerlink" title="第二个问题：如果我的api路径类似 a/b，a/b/c怎么办"></a>第二个问题：如果我的api路径类似 <code>a/b</code>，<code>a/b/c</code>怎么办</h4><p>修改index.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> Path = <span class="built_in">require</span>(<span class="string">'path'</span>)</div><div class="line"><span class="keyword">let</span> glob = <span class="built_in">require</span>(<span class="string">'glob'</span>)</div><div class="line"></div><div class="line"><span class="keyword">const</span> apiFiles = glob.sync(Path.resolve(__dirname, <span class="string">'./'</span>) + <span class="string">'/**/*.js'</span>, &#123;</div><div class="line">  nodir: <span class="literal">true</span></div><div class="line">&#125;)</div><div class="line"><span class="keyword">let</span> data = &#123;&#125;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>, l = apiFiles.length; i &lt; l; i++) &#123;</div><div class="line">  <span class="keyword">let</span> api = <span class="built_in">require</span>(apiFiles[i])</div><div class="line">  <span class="keyword">if</span> (api.url) &#123;</div><div class="line">    data[api.url.replace(<span class="regexp">/\//g</span>, <span class="string">'_'</span>)] = api.res</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> data</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>启动mock服务，我们会看到<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Resources</div><div class="line">  http://localhost:8083/a</div><div class="line">  http://localhost:8083/a_b</div><div class="line">  http://localhost:8083/a_b_c</div><div class="line">  http://localhost:8083/a_b_c_d</div></pre></td></tr></table></figure></p>
+<p>然后在项目根目录下添加<code>jsonserver.json</code>文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;port&quot;: &quot;8888&quot;,</div><div class="line">    &quot;routes&quot;: &quot;./mock/routes.json&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在mock文件夹下添加routes.json文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;/*/*/*/*/*&quot;: &quot;/$1_$2_$3_$4_$5&quot;,</div><div class="line">  &quot;/*/*/*/*&quot;: &quot;/$1_$2_$3_$4&quot;,</div><div class="line">  &quot;/*/*/*&quot;: &quot;/$1_$2_$3&quot;,</div><div class="line">  &quot;/*/*&quot;: &quot;/$1_$2&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样我们就将每次请求的路径类似 <code>a/b/c/d/e</code>转换成了<code>a_b_c_d_e</code></p>
+<p>启动mock服务，然后访问路径<code>localhost:8888/a/b/c/d/e</code>,完美</p>
+<p>最后贴一下本文中所用到的文件的目录结构</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">└─ mock</div><div class="line">│  │─ <span class="built_in">test</span>             <span class="comment"># 文件夹1           </span></div><div class="line">│  │  ├─ a.js          <span class="comment"># api1</span></div><div class="line">|  │  └─ b.js          <span class="comment"># api2</span></div><div class="line">|  ├─ <span class="built_in">test</span>2            <span class="comment"># 文件夹2</span></div><div class="line">|  │  ├─ c.js          <span class="comment"># api3</span></div><div class="line">|  │  └─ d.js          <span class="comment"># api4</span></div><div class="line">|  ├─ index.js         <span class="comment"># 出口文件</span></div><div class="line">|  └─ routers.json     <span class="comment"># 路径转换配置文件</span></div><div class="line">├─ json-server.json    <span class="comment"># 端口等配置</span></div><div class="line">└─ package.json        <span class="comment"># 项目配置</span></div></pre></td></tr></table></figure>
+<p>本文系作者搭建mock服务的一点心得，如有关于搭建mock服务的优雅的解决方案，欢迎各路大神与作者沟通交流，欢迎指正本文中的错误</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作!</br><span style="color:red">❤</span> ☟ ☟ ☟ ☟ <span style="color:red">❤</span></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="群星金融前端团队 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="群星金融前端团队 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/文档/" rel="tag">#文档</a>
+          
+            <a href="/tags/工具/" rel="tag">#工具</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/icomoon.html" rel="next" title="前端图标解决方案 - icomoon篇">
+                <i class="fa fa-chevron-left"></i> 前端图标解决方案 - icomoon篇
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/es61.html" rel="prev" title="ES6中核心内容总结">
+                ES6中核心内容总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="blog/json-server.html"
+           data-title="ES6中核心内容总结" data-url="http://qunxing-fe.github.io/blog/json-server.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head.png"
+               alt="群星金融前端团队" />
+          <p class="site-author-name" itemprop="name">群星金融前端团队</p>
+          <p class="site-description motion-element" itemprop="description">两个黄鹂鸣翠柳，一群程序单身狗！</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/QunXing-FE" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/izhaowenjie" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/jaywin" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-heart-o"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhaowenjie.github.io" title="一个神奇的网站" target="_blank">一个神奇的网站</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二个问题：如果我的api路径类似-a-b，a-b-c怎么办"><span class="nav-number">2.</span> <span class="nav-text">第二个问题：如果我的api路径类似 a/b，a/b/c怎么办</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">群星金融前端团队</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"iqunxing"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
